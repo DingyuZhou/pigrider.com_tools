@@ -1,0 +1,43 @@
+@mixin LinkStyle($normalColor,$hoverColor,$visitedColor) {
+  text-decoration:none;
+  color:$normalColor;
+  &:visited {
+    color:$visitedColor;
+  }
+  &:hover {
+    text-decoration:underline;
+    color:$hoverColor;
+  }
+}
+
+
+@mixin LinkStyleNoUnderline($normalColor,$hoverColor,$visitedColor) {
+  text-decoration:none;
+  color:$normalColor;
+  &:visited {
+    color:$visitedColor;
+  }
+  &:hover {
+    text-decoration:none;
+    color:$hoverColor;
+  }
+}
+
+
+* {
+  margin:0; 
+  padding:0;
+  clear:both;
+}
+
+
+.FloatLeft {
+  clear:none;
+  float:left; 
+}
+
+
+.FloatRight { 
+  clear:none;
+  float:right; 
+}

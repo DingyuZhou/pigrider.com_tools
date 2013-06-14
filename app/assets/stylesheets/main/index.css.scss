@@ -1,0 +1,56 @@
+@import "common";
+
+
+.ShowRoom {
+  margin:25px auto;
+  text-align:center;
+}
+
+
+.BetweenRoom {
+  height:15px;
+}
+
+
+.ToolName {
+  display:block;
+  margin:10px;
+}
+
+
+.ShowPiece {
+  display:inline-block;
+  text-align:center;
+  width:180px;
+  height:180px;
+}
+
+
+.SpaceBetween {
+  display:inline-block;
+  width:40px;
+}
+
+
+.SPPicture {
+  width:150px;
+  height:150px;
+  margin:15px 0 0 0;
+  border-style:none;
+  -moz-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  -webkit-box-shadow:0 0 10px gray;
+  -moz-box-shadow:0 0 10px gray;
+  box-shadow:0 0 10px gray;
+  // border-style:none;
+  
+  &:hover {
+    width:165px;
+    height:165px;
+    margin:0;
+    -webkit-box-shadow:0 0 10px black;
+    -moz-box-shadow:0 0 10px black;
+    box-shadow:0 0 10px black;
+  }
+}

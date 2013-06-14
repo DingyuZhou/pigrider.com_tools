@@ -1,0 +1,38 @@
+<% provide :webpageTitle, "World Clock" %>
+
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools World Clock" />
+  <meta name="description" content="pigRider Tools World Clock" />
+<% end %>
+
+<% provide :webpageCSS do %>
+  <%= stylesheet_link_tag "worldclock/index", :media=>"all" %>
+<% end %>
+
+<% provide :webpageTailJavascript do %>
+  <%= javascript_include_tag "worldclock/main" %>
+<% end %>
+
+
+<div class="MainContainer">
+  <h1 class="WorldClockTitle">World Clock</h1>
+  
+  
+  <div class="LocalTimeContainer"><span>Your local time: </span><span id="tLocalTime"></span></div>
+  
+  
+  <table class="TimeTable">
+    <tr class="Location"><td>Hawaii</td><td>Alaska</td><td>San Francisco</td><td>Denver</td><td>Chicago</td><td>New York</td><td>Santiago</td><td>Brasilia</td><td>South Georgia</td></tr>
+    <tr class="UTCOffset"><td>UTC-10</td><td>UTC-9</td><td>UTC-8</td><td>UTC-7</td><td>UTC-6</td><td>UTC-5</td><td>UTC-4</td><td>UTC-3</td><td>UTC-2</td></tr>
+    <tr class="Time"><td id="tHawaii"></td><td id="tAlaska"></td><td id="tPacif"></td><td id="tMount"></td><td id="tCenter"></td><td id="tEast"></td><td id="tAtl"></td><td id="tBra"></td><td id="tMid"></td></tr>
+  
+    <tr class="BetweenSpace"></tr>
+  
+    <tr class="Location"><td>London</td><td>Berlin</td><td>Cairo</td><td>Moscow</td><td>New Delhi</td><td>Bangkok</td><td>Beijing</td><td>Tokyo</td><td>Sydney</td></tr>
+    <tr class="UTCOffset"><td>UTC</td><td>UTC+1</td><td>UTC+2</td><td>UTC+4</td><td>UTC+5:30</td><td>UTC+7</td><td>UTC+8</td><td>UTC+9</td><td>UTC+10</td></tr>
+    <tr class="Time"><td id="tUTC"></td><td id="tBerlin"></td><td id="tCairo"></td><td id="tMsw"></td><td id="tDel"></td><td id="tKok"></td><td id="tHo"></td><td id="tTky"></td><td id="tSdn"></td></tr>
+  </table>
+  
+  
+  <h2 class="DSTWarning">Standard Time<span> &#160; = &#160; </span>Daylight Saving Time<span> &#160; - &#160; </span>1 hour</h2>
+</div>

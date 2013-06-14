@@ -1,0 +1,60 @@
+.MainContainer {
+  margin:auto;
+  text-align:center;
+}
+
+
+.WorldClockTitle {
+  margin:20px 0 20px 0;  
+}
+
+
+.LocalTimeContainer {
+  margin:0 0 5px 0;
+  font-style:italic;
+}
+
+
+table.TimeTable {
+  margin:auto;
+  text-align:center;
+  border-collapse:collapse;
+  font-size:13px;
+  td {
+    width:100px;
+    border:3px solid #98bf21;
+  }
+  
+  
+  tr.Location {
+    background-color:#EAF2D3;
+    height:30px;
+    font-weight:bold;
+  }
+  
+  
+  tr.UTCOffset {
+    font-size:12px;
+    height:20px;
+  }
+  
+  
+  tr.Time {
+    background-color:#EAF2D3;
+    height:25px;
+    font-style:italic;
+  }
+
+
+  tr.BetweenSpace {
+    height:40px;
+  }
+}
+
+.DSTWarning {
+  margin:30px 0 50px 0;
+  color:#ff6633;
+  span {
+    color:blue;
+  }
+}

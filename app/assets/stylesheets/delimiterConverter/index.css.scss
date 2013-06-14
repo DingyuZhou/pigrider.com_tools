@@ -1,0 +1,113 @@
+@import "common";
+
+
+.OldDelimiter {
+  margin:25px 0 20px 0;
+  
+  div.ODHeader {
+    font-weight:bold;
+    font-size:18px;
+    font-style:italic;
+  }
+  
+  p {
+    margin:0 0 0 30px;
+    height:22px;
+  }
+  
+  span {
+    display:inline-block;
+    width:100px;
+    margin:0 0 0 5px;
+  }
+  
+  b {
+    font-size:20px;
+  }
+  
+  span.CDText {
+    width:auto;
+    margin:0 5px;
+  }
+}
+
+
+.NewDelimiter {
+  div.NDHeader {
+    font-weight:bold;
+    font-size:18px;
+    font-style:italic;
+  }
+  
+  p {
+    margin:0 0 0 30px;
+    height:22px;
+  }
+  
+  span {
+    display:inline-block;
+    width:100px;
+    margin:0 0 0 5px;
+  }
+  
+  b {
+    font-size:20px;
+  }
+  
+  span.CDText {
+    width:auto;
+    margin:0 5px;
+  }
+}
+
+
+#delimiterCollapseContainer {
+  margin:25px 0 5px 130px;
+  span {
+    display:inline-block;
+    width:160px;
+    margin:0 0 0 5px;
+  }
+}
+
+
+#endDelimiterContainer {
+  height:30px;
+  margin:0 0 0 160px;
+  span {
+    margin:0 0 0 5px;
+  }
+}
+
+
+#emptyLineContainer {
+  margin:0 0 0 130px;
+  height:30px;
+  span {
+    display:inline-block;
+    width:160px;
+    margin:0 0 0 5px;
+  }
+}
+
+
+.WorkingAreaContainer {
+  width:95%;
+  
+  textarea {
+    width:100%;
+    height:500px;
+  }
+  
+  button {
+    margin:5px 0;
+    width:100px;
+    height:25px;
+    font-weight:bold;
+    font-style:italic;
+  }
+  
+  button.BeforeButton {
+    @extend .FloatRight;
+  }
+}

@@ -1,0 +1,61 @@
+<% provide :webpageTitle, "Sql Table Alignment" %>
+
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools Sql Table Alignment" />
+  <meta name="description" content="pigRider Tools Sql Table Alignment" />
+<% end %>
+
+<% provide :webpageCSS do %>
+<%= stylesheet_link_tag "alignment/index", :media=>"all" %>
+<% end %>
+
+<% provide :webpageHeadJavascript do %>
+<%= javascript_include_tag "common/ajaxHelper" %>
+<%= javascript_include_tag "alignment/alignment"%>
+<%= javascript_include_tag "alignment/zero_clipboard"%>
+<% end %>
+
+<% provide :webpageTailJavascript do %>
+<%= javascript_include_tag "alignment/copy"%>
+<% end %>
+
+<div class="content">
+  <div class="inputArea FloatLeft">
+    <TextArea  class="textarea" name="input" id="input1" onfocus="on_focus(this)" onblur="on_blur(this)">Copy your code here.</TextArea>
+  </div>
+
+  <div class="buttonArea FloatLeft">
+    <input type="button" value="Format" id="format" onclick="getTextAreaValue('spaceselect', 'delimiterselect');" class="btn_class">
+    <input type="button" value="Clear" id="clear" onclick="clearTextArea();" class="btn_class">
+    <input type="button" value="Copy" id="copy" onclick="copy();" class="copyButton">
+
+      <label id="space">Spaces:</label>
+      <select id="spaceselect" name="extraspace">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <label id="delimiter">Delimiter:</label>
+      <select id="delimiterselect" name="delimiter">
+        <option value=" ">Space</option>
+        <option value=" ">Tab</option>
+        <option value=",">,</option>
+        <option value=";">;</option>
+        <option value="|">|</option>
+        <option value="~">~</option>
+      </select>
+
+  </div>
+
+  <div class="outputArea FloatLeft">
+    <TextArea  class="textarea" name="output" id="output1" value=''></TextArea>
+  </div>
+
+  <div class="clear"></div>
+</div>

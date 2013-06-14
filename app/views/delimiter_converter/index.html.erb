@@ -1,0 +1,74 @@
+<% provide :webpageTitle, "Delimiter Converter" %>
+
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools Delimiter Converter" />
+  <meta name="description" content="pigRider Tools Delimiter Converter" />
+<% end %>
+
+<% provide :webpageCSS do %>
+  <%= stylesheet_link_tag "delimiterConverter/index", :media=>"all" %>
+<% end %>
+
+<% provide :webpageHeadJavascript do %>
+  <%= javascript_include_tag "common/ajaxHelper" %>
+  <%= javascript_include_tag "delimiterConverter/main" %>
+<% end %>
+
+<% provide :webpageTailJavascript do %>
+  <%= javascript_include_tag "delimiterConverter/event_listener" %>
+<% end %>
+
+
+<h1>Delimiter Converter</h1>
+
+<form class="OldDelimiter">
+  <div class="ODHeader">From Delimiter:</div>
+  <p>
+    <input type="checkbox" id="oldSpace" checked="checked"><span>Space</span>
+    <input type="checkbox" id="oldTab" checked="checked"><span>Tab</span>
+    <input type="checkbox" id="oldNewline"><span>Newline</span>
+    <input type="checkbox" id="oldColon"><span>Colon <b>:</b></span>
+    <input type="checkbox" id="oldSemicolon"><span>Semicolon <b>;</b></span>
+  </p>
+  <p>
+    <input type="checkbox" id="oldComma"><span>Comma <b>,</b></span>
+    <input type="checkbox" id="oldPeriod"><span>Period <b>.</b></span>
+    <input type="checkbox" id="oldCustomized"><span class="CDText">Other Delimiter: </span><input type="textfield" id="oldCustomizedDelimiter">
+  </p>
+</form>
+
+<form class="NewDelimiter">
+  <div class="NDHeader">To Delimiter:</div>
+  <p>
+    <input type="radio" Name="NewDelimiter" id="newSpace"><span>Space</span>
+    <input type="radio" Name="NewDelimiter" id="newTab" checked="checked"><span>Tab</span>
+    <input type="radio" Name="NewDelimiter" id="newNewline"><span>Newline</span>
+    <input type="radio" Name="NewDelimiter" id="newColon"><span>Colon <b>:</b></span>
+    <input type="radio" Name="NewDelimiter" id="newSemicolon"><span>Semicolon <b>;</b></span>
+  </p>
+  <p>
+    <input type="radio" Name="NewDelimiter" id="newComma"><span>Comma <b>,</b></span>
+    <input type="radio" Name="NewDelimiter" id="newPeriod"><span>Period <b>.</b></span>
+    <input type="radio" Name="NewDelimiter" id="newCustomized"><span class="CDText">Other Delimiter: </span><input type="textfield" id="newCustomizedDelimiter">
+  </p>
+</form>
+
+<div id="delimiterCollapseContainer">
+  <input type="radio" Name="DelimiterCollapse" id="collapseDelimiter" checked="checked"><span>Collapse Delimiter</span>
+  <input type="radio" Name="DelimiterCollapse" id="keepAllDelimiter"><span>Keep All Delimiter</span>
+</div>
+<div id="endDelimiterContainer">
+  <input type="checkbox" id="addEndDelimiter"><span>Add a delimiter at the end of the line when collapsing delimiter.</span>
+</div>
+
+<div id="emptyLineContainer">
+  <input type="radio" Name="EmptyLine" id="deleteEmptyLine" checked="checked"><span>Delete Empty Line</span>
+  <input type="radio" Name="EmptyLine" id="keepEmptyLine"><span>Keep Empty Line</span>
+</div>
+
+
+<div class="WorkingAreaContainer">
+  <button type="button" class="BeforeButton" onclick="convertDelimiter()">Convert</button>
+  <textarea id="workingArea"></textarea>
+  <button type="button" class="AfterButton" onclick="convertDelimiter()">Convert</button>
+</div>

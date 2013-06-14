@@ -1,0 +1,98 @@
+@import "common";
+
+
+pre {
+  padding:10px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  overflow:auto;
+}
+
+
+body {
+  width:1000px;
+  margin:0 auto;
+  background-color:#e5f2ff;
+  font-family:sans-serif,Arial,Helvetica;
+  font-size:15px;
+}
+
+
+$headerHeight: 60px;
+header {
+  position:relative;
+  background-color:#7dbeff;
+  height:$headerHeight;
+  width:100%;
+  margin:0 auto;
+  border-bottom:5px;
+  border-bottom-style:solid;
+  border-bottom-color:#ffc477;
+}
+
+
+.MainBody {
+  position:relative;
+  min-height:500px;
+  padding:10px 20px 10px 20px;
+  background-color:#ffffff;
+  border:1px;
+  border-color:#b0b0b0;
+  border-left-style:solid;
+  border-right-style:solid;
+  a {
+    @include LinkStyle(#0000ff,#ff0000,#0000ff);
+  }
+}
+
+
+$footerHeight: 30px;
+footer {
+  position:relative;
+  background-color:#7dbeff;
+
+  height:$footerHeight; 
+  width:100%; 
+  margin:0 auto;
+  border-top:5px;
+  border-top-style:solid;
+  border-top-color:#ffc477;
+}
+
+ 
+// Header Specific
+#pigRiderLogo {
+  background-color:#ffffff;
+  margin:0 0 0 1px;
+  height:$headerHeight;
+  width:$headerHeight * 1.5;
+}
+#headerNav {
+  position:absolute;
+  right:0;
+  bottom:0;
+  padding:5px 5px 2px 15px;
+  background-color:#ffc477;
+  -moz-border-radius:50px 0 0 0;
+  -webkit-border-radius:50px 0 0 0;
+  border-radius:50px 0 0 0;
+  a {
+    margin:0 0 0 15px;
+    @include LinkStyle(#0000ff,#ff0000,#0000ff);
+  }
+}
+
+
+// Footer Specific
+#footerNav{
+  position:absolute;
+  left:0;
+  a {
+    line-height:$footerHeight;
+    margin:0 0 0 15px;
+    @include LinkStyle(#0000ff,#ff0000,#0000ff);
+  }
+}

@@ -1,0 +1,47 @@
+<% provide :webpageTitle, "Home" %>
+
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools" />
+  <meta name="description" content="pigRider Tools" />
+<% end %>
+
+<% provide :webpageCSS do %>
+  <%= stylesheet_link_tag "main/index", :media=>"all" %>
+<% end %>
+
+
+<div class="ShowRoom">
+  <div class="ShowPiece">
+    <a href="/Alignment"><img src="/assets/main/alignment.png" class="SPPicture" alt="Alignment"></a><br />
+    <a href="/Alignment" class="ToolName">Alignment</a>
+  </div>
+  
+  <div class="SpaceBetween"></div>
+  <div class="ShowPiece">
+    <a href="/Calculator"><img src="/assets/main/calculator.png" class="SPPicture" alt="Calculator"></a><br />
+    <a href="/Calculator" class="ToolName">Calculator</a>
+  </div>
+  
+  <div class="SpaceBetween"></div>
+  <div class="ShowPiece">
+    <a href="/DateCalculator"><img src="/assets/main/calendarIcon.png" class="SPPicture" alt="Date Calculator"></a><br />
+    <a href="/DateCalculator" class="ToolName">Date Calculator</a>
+  </div>
+  
+  <div class="SpaceBetween"></div>
+  <div class="ShowPiece">
+    <a href="/DelimiterConverter"><img src="/assets/main/delimiterConverter.png" class="SPPicture" alt="Delimiter Converter"></a><br />
+    <a href="/DelimiterConverter" class="ToolName">Delimiter Converter</a>
+  </div>
+</div>
+
+
+<div class="BetweenRoom"></div>
+
+
+<div class="ShowRoom"> 
+  <div class="ShowPiece">
+    <a href="/WorldClock"><img src="/assets/main/worldClock.png" class="SPPicture" alt="World Clock"></a><br />
+    <a href="/WorldClock" class="ToolName">World Clock</a>
+  </div>
+</div>

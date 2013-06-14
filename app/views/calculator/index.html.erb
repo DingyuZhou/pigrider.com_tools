@@ -1,0 +1,143 @@
+<% provide :webpageTitle, "Calculator" %>
+
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools Calculator" />
+  <meta name="description" content="pigRider Tools Calculator" />
+<% end %>
+
+<% provide :webpageCSS do %>
+  <%= stylesheet_link_tag "calculator/index", :media=>"all" %>
+<% end %>
+
+<% provide :webpageHeadJavascript do %>
+  <%= javascript_include_tag "common/ajaxHelper" %>
+  <%= javascript_include_tag "calculator/textarea_operation_class" %>
+  <%= javascript_include_tag "calculator/undo_redo_class" %>
+  <%= javascript_include_tag "calculator/find_insert_point_class" %>
+  <%= javascript_include_tag "calculator/string_calculate_class" %>
+  <%= javascript_include_tag "calculator/calculator_button_listener_class" %>
+  <%= javascript_include_tag "calculator/keyboard_listener_class" %>
+<% end %>
+
+<% provide :webpageTailJavascript do %>
+  <%= javascript_include_tag "calculator/event_listener" %>
+<% end %>
+
+
+<div id="toolCalculator">  
+  <div id="calculatorBody" class="FloatLeft">
+    <div id="cbHeader">
+      Number of Digits: 
+      <select id="cbDigits">
+        <option selected="selected">Default</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+      </select>
+      <button id="cbRedo" class="cbCtrB">Redo</button>
+      <button id="cbUndo" class="cbCtrB">Undo</button>
+    </div>
+    
+    <p id="cbResult">0.</p>
+    <textarea id="cbEquation"></textarea>
+    <p class="cbButtonRow">
+      <button id="cbFoS" class="cbCtrB">Fixed Point</button>
+      <button id="cbDoR" class="cbCtrB">Radian</button>
+      <button id="cbMode" class="cbCtrB">Mode C</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbSin" class="cbTriB">sin</button>
+      <button id="cbCos" class="cbTriB">cos</button>
+      <button id="cbTan" class="cbTriB">tan</button>
+      <button id="cbCsc" class="cbTriB">csc</button>
+      <button id="cbSec" class="cbTriB">sec</button>
+      <button id="cbCot" class="cbTriB">cot</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbAsin" class="cbTriB">asin</button>
+      <button id="cbAcos" class="cbTriB">acos</button>
+      <button id="cbAtan" class="cbTriB">atan</button>
+      <button id="cbAcsc" class="cbTriB">acsc</button>
+      <button id="cbAsec" class="cbTriB">asec</button>
+      <button id="cbAcot" class="cbTriB">acot</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbCub" class="cbFunB"><sup id="cbCub1" class="cbFunB1">3</sup>&#8730;<span id="cbCub2" class="cbFunB2" style="text-decoration:overline">&nbsp;&nbsp;&nbsp;</span></button>
+      <button id="cb_X2" class="cbFunB">x<sup id="cb_X21" class="cbFunB1">2</sup></button>
+      <button id="cb_X3" class="cbFunB">x<sup id="cb_X31" class="cbFunB1">3</sup></button>
+      <button id="cb_Ex" class="cbFunB">e<sup id="cb_Ex1" class="cbFunB1">x</sup></button>
+      <button id="cb10x" class="cbFunB">10<sup id="cb10x1" class="cbFunB1">x</sup></button>
+      <button id="cb_Yx" class="cbFunB">y<sup id="cb_Yx1" class="cbFunB1">x</sup></button>    
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbSqt" class="cbFunB">&#8730;<span id="cbSqt1" class="cbFunB1" style="text-decoration:overline">&nbsp;&nbsp;&nbsp;</span></button>
+      <button id="cbRcp" class="cbFunB">1/x</button>  
+      <button id="cbPct" class="cbFunB">%</button>
+      <button id="cb_Ln" class="cbFunB">ln</button>
+      <button id="cbLog" class="cbFunB">log</button>
+    </p>
+       
+    <p class="cbButtonRow">
+      <button id="cbPi" class="cbCstB">Pi</button>
+      <button id="cbEulerN" class="cbCstB">e</button>
+      <button id="cbParL" class="cbOprB">(</button>
+      <button id="cbParR" class="cbOprB">)</button>
+      <button id="cbAC" class="cbOprB">AC</button>      
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbNum7" class="cbNumB">7</button>
+      <button id="cbNum8" class="cbNumB">8</button>
+      <button id="cbNum9" class="cbNumB">9</button>
+      <button id="cbEXP" class="cbSOpB">EXP</button>
+      <button id="cbDEL" class="cbOprB">DEL</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbNum4" class="cbNumB">4</button>
+      <button id="cbNum5" class="cbNumB">5</button>
+      <button id="cbNum6" class="cbNumB">6</button>
+      <button id="cbMulti" class="cbOprB">*</button>
+      <button id="cbDivi" class="cbOprB">/</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbNum1" class="cbNumB">1</button>
+      <button id="cbNum2" class="cbNumB">2</button>
+      <button id="cbNum3" class="cbNumB">3</button>
+      <button id="cbAdd" class="cbOprB">+</button>
+      <button id="cbSub" class="cbOprB">-</button>
+    </p>
+    
+    <p class="cbButtonRow">
+      <button id="cbNum0" class="cbNumB">0</button>
+      <button id="cbDot" class="cbNumB">.</button>
+      <button id="cbNeg" class="cbSOpB">+/-</button>
+      <button id="cbANS" class="cbOprB">ANS</button>
+      <button id="cbCalculate" class="cbOprB">=</button>
+    </p>
+  </div>
+
+  <div id="storeContainer" class="FloatLeft">  
+    <button id="mcStoreResult" class="mcStoreB">Store Result</button>
+    <button id="mcStoreEquation" class="mcStoreB">Store Equation</button>
+
+    <table id="scStoreTable" border="1">
+      <tr><td class="scResultCell">Result</td><td class="scEquCell">Equation</td><td class="scRemoveCell"><span id="scRecallRmA" class="scRemoveTag">Remove All</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<div></div>
