@@ -1,0 +1,92 @@
+
+ <body>
+ 	
+<% provide :webpageTitle, "Basic Statistics" %>
+<% provide :webpageMetaTag do %>
+  <meta name="keywords" content="pigRider Tools Basic Statistics" />
+  <meta name="description" content="pigRider Tools Basic Statistics" />
+<% end %>
+
+ 	
+<% provide :webpageHeadJavascript do %>
+<%= javascript_include_tag "common/ajaxHelper" %>
+<%= javascript_include_tag "basicStatistics/index"%>
+<% end %>
+
+<% provide :webpageCSS do %>
+<%= stylesheet_link_tag "basicStatistics/index", :media=>"all" %>
+<% end %>
+
+ <h1>Basic Statistics</h1>
+
+ 
+ <br>
+ <br>
+  <br>
+   <br>
+ <!-- <p>My first paragraph.</p>
+ <a href="http://www.w3schools.com">This is a link</a> 
+ <img src="/assets/pigRiderLogo.png" width="104" height="142"> <br />
+  <br >
+ 
+ <textarea id="t1" rows="1" cols="15"></textarea> kg = <textarea id="t2" rows="1"></textarea>  g <br >
+ <button type="button" onclick="afterClick()">Submit</button>
+ <br />
+ <br> -->
+ <div class="textarea FloatLeft" id = "rawdata_div"> 
+<textarea id="rawdata" style = "width: 490px; height:400px;"></textarea>   
+</div>
+
+ <div class="button FloatLeft" id = "middle_div" style="margin-right:35px; margin-left:35px">
+ <form>
+<input type="checkbox" name="stat" id="count" title= " count of population" value="number" />
+<span title = "count of population"> count </span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="stat" title= " mode of population" id="mode" /> 
+<span title= " mode of population"> mode </span>
+<br />
+<span title = "mean value of population"><input type="checkbox" name="stat" title= " mean value of population" id="mean" /> mean</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="stat" title= " variance of population" id="var" /> 
+<span title = "variance of population"> variance </span>
+<br />
+<input type="checkbox" name="stat" title= " the maximum value of population" id="max" /> 
+<span title = " the maximum value of population"> max </span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="stat" 
+title= " the minimum value of population" id="min" /> 
+<span title = " the minimum value of population"> min </span>
+<br />
+<input type="checkbox" name="stat" title= " the standard deviation of population" id="std" />
+<span title = " the standard deviation of population"> std </span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="stat" 
+title= " the median of population" id="median" /> 
+<span title = " the median of population"> median </span>
+<br />
+<input type="checkbox" name="stat" title= " interquartile range of population" id="iqr" /> 
+<span title = " interquartile range of population"> iqr </span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="stat" 
+title= " summation of population" id="sum" /> 
+<span title = " summation of population"> sum </span>
+</form>
+
+
+<button type="button" class="css_btn_class" id="togo" onclick="myFunction()">GO</button>
+<br />
+<button type="button" class="css_btn_class" id="help" onclick="toExplain()">Help</button>
+</div>
+
+
+ <div class="textarea FloatLeft" id = "result_div">
+<textarea id="result" style = "width: 200px; height: 400px;" ></textarea>
+</div>
+
+ <!-- <script>
+ 
+ var x = 5;
+ var y = 6;
+ var z = x/y;
+ document.getElementByName("result").innerHTML="";
+ </script> -->
+ 
+
+
+ </body>
+ </html> 

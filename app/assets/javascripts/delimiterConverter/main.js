@@ -3,6 +3,16 @@ var nASCII_LENGTH=128;
 var gabOldDelimiter=new Array(nASCII_LENGTH);
 var gcNewDelimiter;
 var goDelimiterRegExp;
+var goUndo;
+
+
+function decodeCustomizedInput(sInput) {
+  cSpecialChar=String.fromCharCode(7);
+  oSpecialCharRegExp=new RegExp("\\7","g");
+  return sInput.replace(/\\\\t/g,cSpecialChar).replace(/\\t/g,"\t").replace(oSpecialCharRegExp,"\\t")
+    .replace(/\\\\r/g,cSpecialChar).replace(/\\r/g,"\r").replace(oSpecialCharRegExp,"\\r")
+    .replace(/\\\\n/g,cSpecialChar).replace(/\\n/g,"\n").replace(oSpecialCharRegExp,"\\n");
+}
 
 
 function getNewDelimiter() {
@@ -21,7 +31,7 @@ function getNewDelimiter() {
   } else if (document.getElementById("newPeriod").checked) {
     gcNewDelimiter='.';
   } else if (document.getElementById("newCustomized").checked) {
-    gcNewDelimiter=document.getElementById("newCustomizedDelimiter").value;
+    gcNewDelimiter=decodeCustomizedInput(document.getElementById("newCustomizedDelimiter").value);
   } 
 }
 
@@ -64,7 +74,7 @@ function getOldDelimiter() {
     sDelimiter+="\\.";
   } 
   if (document.getElementById("oldCustomized").checked) {
-    var sOldCustomizedDelimiter=document.getElementById("oldCustomizedDelimiter").value;
+    var sOldCustomizedDelimiter=decodeCustomizedInput(document.getElementById("oldCustomizedDelimiter").value);
     sOldCustomizedDelimiter=sOldCustomizedDelimiter.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
     var oReg=new RegExp(sOldCustomizedDelimiter,"g");
     gsInput=gsInput.replace(oReg,String.fromCharCode(7));
@@ -88,6 +98,7 @@ function isOldDelimiter(sChar) {
 
 
 function convertDelimiter() {
+  goUndo.push();
   getNewDelimiter();
   getOldDelimiter();
 
@@ -230,5 +241,6 @@ function convertDelimiter() {
   }
   
   document.getElementById("workingArea").value=sResult;
+  goUndo.push();
 }
 

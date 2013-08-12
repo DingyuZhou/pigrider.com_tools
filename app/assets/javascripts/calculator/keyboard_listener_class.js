@@ -27,7 +27,9 @@ var KeyboardListener = {
         goCalculatorListener.mdANS=gdLastCalculateResult;
         goCalculatorListener.msCalculationResult=document.getElementById(gsResultContainerID).innerHTML;
         goCalculatorListener.msCalculationEquation=document.getElementById(gsEquaitonContainerID).value;
-        oEquDisplay.value=goCalculatorListener.optimizeOuterParentheses("("+oEquDisplay.value+")",false).optimizedString;
+        if (goCalculate.miWarningID!=2) {
+          oEquDisplay.value=goCalculatorListener.optimizeOuterParentheses("("+oEquDisplay.value+")",false).optimizedString;
+        }
         goCalculatorListener.miInsertPoint=oEquDisplay.value.length;
         moTAO.highlightText(msTextareaID,goCalculatorListener.miInsertPoint,goCalculatorListener.miInsertPoint);
       }

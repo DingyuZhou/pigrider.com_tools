@@ -1,5 +1,6 @@
 window.onload=function() {
   document.getElementById("workingArea").value="";
+  goUndo=UndoRedo.createNew("workingArea",10);
   
   document.getElementById("oldSpace").checked=true;
   document.getElementById("oldTab").checked=true;
@@ -66,7 +67,17 @@ addEvent(document.getElementById("newCustomizedDelimiter"), "click", function() 
 
 
 document.onkeydown=function(event) {
+  if ((event.ctrlKey || event.metaKey) && event.keyCode==13) {
+    convertDelimiter();
+  }
+  
   if (event.keyCode==27) {
     document.getElementById("workingArea").value="";
-  }  
+  }
+  
+  if ((event.ctrlKey || event.metaKey) && event.keyCode==90) {
+    event.preventDefault(); goUndo.undo();
+  } else if ((event.ctrlKey || event.metaKey) && event.keyCode==89) {
+    event.preventDefault(); goUndo.redo();
+  }
 }

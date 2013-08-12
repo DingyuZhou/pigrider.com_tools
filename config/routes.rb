@@ -1,18 +1,24 @@
 PigRiderTools::Application.routes.draw do
 
+  mount PigriderLayout::Engine, :at=>"/info"
+
+
 # main page
   match "/"=>"main#index", :as=>:mainPage
-  match "/AboutUs"=>"main#aboutUs", :as=>:aboutUs
-  match "/ContactUs"=>"main#contactUs", :as=>:contactUs
 
 
 # tools
+  get "basicstatistics/index"
+  get "worldclock/index"
+
   match "/Alignment"=>"alignment#index", :as=>:toolSqlTableAlignment 
+  match "/BasicStatistics"=>"basicstatistics#index",:as=>:toolBasicStatistics
   match "/Calculator"=>"calculator#index", :as=>:toolCalculator
   match "/DateCalculator"=>"DateCalculator#index", :as=>:toolDateCalculator
   match "/DelimiterConverter"=>"DelimiterConverter#index", :as=>:toolDelimiterConverter
   match "/WorldClock"=>"worldclock#index", :as=>:toolWorldClock
   
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

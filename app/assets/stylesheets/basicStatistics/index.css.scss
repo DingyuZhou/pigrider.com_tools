@@ -1,0 +1,121 @@
+// Place all the styles related to the tianya controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+input {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle; 
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+#bgDiv{
+     position: absolute; 
+     top: 0; 
+     background-color:#7dbeff;
+     filter: progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75); 
+     opacity: 0.5; 
+     left: 0; 
+     width: 1000px;
+     height: 620px;
+     min-width: 100%;
+     min-height: 100%;
+     zIndex: 10000; 
+}
+
+#msgDiv{
+  background-color: #ffffff;
+  position: absolute;
+  margin-top: 15px;
+  margin: 0 auto;
+  top : 20%;
+  left : 400px;
+  right: 400px;
+  z-index: 10001;
+  width: 20%;
+  height: 35%;
+  min-width: 400px;
+  min-height:400px;
+  max-width: 600px;
+  max-height: 600px;
+  //margin: 0 auto;
+  outline-width:2px;
+  outline-color:#00ff00;
+  border-style:none;
+  -moz-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  text-align: center;
+}
+#msgSpan{
+  background-color: #ffffff;
+  width: 80%;
+  height:70%;
+
+}
+
+#helpButton{
+  z-index: 10001;
+  height: 40px;
+  
+}
+#msgTxt{
+  padding: 10px;
+}
+#helptitle{
+  margin: 0;
+  top: 0;
+  padding: 5px;
+  height: 20px;
+  
+}
+/*button{
+  width: 80px;
+  height: 20px;
+  margin-top: 15px;
+    margin-bottom: 15px;    
+    margin-left: 20px;
+}*/
+
+.css_btn_class {
+  margin-top: 30px;
+    margin-bottom: 20px; 
+    width: 80px;
+  /*font-size:16px;*/
+  font-family:Arial;
+  margin-left: 20px;
+  font-weight:normal;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  border:1px solid #ffaa22;
+  padding:9px 18px;
+  text-decoration:none;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffec64), color-stop(100%, #ffab23) );
+  background:-moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% );
+  background:-ms-linear-gradient( top, #ffec64 5%, #ffab23 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23');
+  background-color:#ffec64;
+  color:#333333;
+  display:inline-block;
+  text-shadow:1px 1px 0px #ffee66;
+  -webkit-box-shadow:inset 1px 1px 0px 0px #fff6af;
+  -moz-box-shadow:inset 1px 1px 0px 0px #fff6af;
+  box-shadow:inset 1px 1px 0px 0px #fff6af;
+}
+.css_btn_class:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffab23), color-stop(100%, #ffec64) );
+  background:-moz-linear-gradient( center top, #ffab23 5%, #ffec64 100% );
+  background:-ms-linear-gradient( top, #ffab23 5%, #ffec64 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64');
+  background-color:#ffab23;
+}
+
+.css_btn_class:active {
+  position:relative;
+  top:1px;
+}

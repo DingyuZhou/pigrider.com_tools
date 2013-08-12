@@ -8,6 +8,7 @@ var StringCalculate = {
     var madNum=new Array();
     var mnPart,miPb,miPp,miPf;
     var msWarning="",mdResult;
+    moNew.miWarningID=0;   // 0 stands for no warning; 1 stands for "Carriage return in a number!!"; 2 stands for "Missing )".
     var maiPtf=new Array(),maiPtb=new Array(),miPtf0,miPtb0;
     
     
@@ -79,7 +80,7 @@ var StringCalculate = {
     moNew.run = function(sEqu,sResultDisplayContainerID) {
       oResultDisplayContainer=document.getElementById(sResultDisplayContainerID);
       mnPart=0;
-      msWarning=""; mdResult=0.0;  
+      msWarning=""; moNew.miWarningID=0; mdResult=0.0;  
       
       // It's on purpose to replace '\ ' first, and then replace '\r' and '\n'.
       // This replace order is used to check if a number is seperated by several lines.
@@ -109,6 +110,7 @@ var StringCalculate = {
             if ((cc>='0' && cc<='9') || cc=='.')
             {
               msWarning=msWarning+"<br />Warning: Carriage return in a number!!";
+              moNew.miWarningID=1;
               break;
             }
           }
@@ -393,7 +395,8 @@ var StringCalculate = {
       if (Parenthesis>0) 
       {
         for (ii=Parenthesis; ii>0; ii--) {masEquPart[mnPart]=")"; maiPartType[mnPart]=7; mnPart++;}
-        msWarning=msWarning+"<br />Warning: Missing some ')'. Already automatically made them up when calculating.";
+        msWarning=msWarning+"<br />Warning: Missing ')'. The result is calculated with the assumption that all missing ')' are at the end of the equation.";
+        moNew.miWarningID=2;
       }
       else if (Parenthesis<0) {inpErr(oResultDisplayContainer,"Missing: ("); return;}
     

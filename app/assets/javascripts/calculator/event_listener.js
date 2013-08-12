@@ -10,7 +10,7 @@ var gsStoreTableID="scStoreTable";
 var gdLastCalculateResult=0.0;
 
 
-var goUndo=UndoRedo.createNew(gsEquaitonContainerID);
+var goUndo=UndoRedo.createNew(gsEquaitonContainerID,50);
 var goCalculate=StringCalculate.createNew();
 var goCalculatorListener=CalculatorButtonListener.createNew(gsEquaitonContainerID,gsResultContainerID);
 var goKeyboardListener=KeyboardListener.createNew(gsEquaitonContainerID,gsResultContainerID);

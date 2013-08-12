@@ -11,12 +11,16 @@
 
 <% provide :webpageHeadJavascript do %>
   <%= javascript_include_tag "common/ajaxHelper" %>
+  <%= javascript_include_tag "calculator/undo_redo_class" %>
   <%= javascript_include_tag "delimiterConverter/main" %>
 <% end %>
 
 <% provide :webpageTailJavascript do %>
   <%= javascript_include_tag "delimiterConverter/event_listener" %>
 <% end %>
+
+
+<% sOtherDelimiterExplanation="Please use \\t for Tab, \\n or \\r\\n for New Line.\nHowever, if you don't need these special characters and really need \\t, \\r or \\n in your input, please use \\\\t, \\\\r or \\\\n to instead." %>
 
 
 <h1>Delimiter Converter</h1>
@@ -33,7 +37,7 @@
   <p>
     <input type="checkbox" id="oldComma"><span>Comma <b>,</b></span>
     <input type="checkbox" id="oldPeriod"><span>Period <b>.</b></span>
-    <input type="checkbox" id="oldCustomized"><span class="CDText">Other Delimiter: </span><input type="textfield" id="oldCustomizedDelimiter">
+    <input type="checkbox" id="oldCustomized"><span class="CDText" title="<%= sOtherDelimiterExplanation %>">Other Delimiter: </span><input type="textfield" id="oldCustomizedDelimiter" title="<%= sOtherDelimiterExplanation %>">
   </p>
 </form>
 
@@ -49,12 +53,12 @@
   <p>
     <input type="radio" Name="NewDelimiter" id="newComma"><span>Comma <b>,</b></span>
     <input type="radio" Name="NewDelimiter" id="newPeriod"><span>Period <b>.</b></span>
-    <input type="radio" Name="NewDelimiter" id="newCustomized"><span class="CDText">Other Delimiter: </span><input type="textfield" id="newCustomizedDelimiter">
+    <input type="radio" Name="NewDelimiter" id="newCustomized"><span class="CDText" title="<%= sOtherDelimiterExplanation %>">Other Delimiter: </span><input type="textfield" id="newCustomizedDelimiter" title="<%= sOtherDelimiterExplanation %>">
   </p>
 </form>
 
 <div id="delimiterCollapseContainer">
-  <input type="radio" Name="DelimiterCollapse" id="collapseDelimiter" checked="checked"><span>Collapse Delimiter</span>
+  <input type="radio" Name="DelimiterCollapse" id="collapseDelimiter" checked="checked"><span title="If this option get chosen, it will get rid of all delimiters at both the begining and the end of each line. Also, it will keep only one delimiter between two words.">Collapse Delimiter</span>
   <input type="radio" Name="DelimiterCollapse" id="keepAllDelimiter"><span>Keep All Delimiter</span>
 </div>
 <div id="endDelimiterContainer">
@@ -68,7 +72,9 @@
 
 
 <div class="WorkingAreaContainer">
-  <button type="button" class="BeforeButton" onclick="convertDelimiter()">Convert</button>
+  <button type="button" onclick="goUndo.push(); goUndo.undo();" title="Ctrl+Z">Undo</button>
+  <button type="button" onclick="goUndo.redo();" title="Ctrl+Y">Redo</button>
+  <button type="button" class="BeforeButton" onclick="convertDelimiter();" title="Ctrl+Enter">Convert</button>
   <textarea id="workingArea"></textarea>
-  <button type="button" class="AfterButton" onclick="convertDelimiter()">Convert</button>
+  <button type="button" class="AfterButton" onclick="convertDelimiter();" title="Ctrl+Enter">Convert</button>
 </div>

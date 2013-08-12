@@ -697,6 +697,7 @@ var CalculatorButtonListener = {      // Define a class CalculatorButtonListener
                     
           if (mbAngleInDegree) {
             oDorRB.innerHTML="Radian"; oDorRB.style.color=msWhite;
+            oDorRB.title="The calculator currently sets the Radian as the angle unit. Click to set the Degree as the angle unit.";
             for (var ii=0; ii<aoTriFunc.length; ++ii) {
               if (aoTriFunc[ii].innerHTML.charAt(4)=='<') {
                 aoTriFunc[ii].innerHTML=aoTriFunc[ii].innerHTML.substring(0,4);  
@@ -707,6 +708,7 @@ var CalculatorButtonListener = {      // Define a class CalculatorButtonListener
             mbAngleInDegree=false;
           } else {
             oDorRB.innerHTML="Degree"; oDorRB.style.color=msRed;
+            oDorRB.title="The calculator currently sets the Degree as the angle unit. Click to set the Radian as the angle unit.";
             for (var ii=0; ii<aoTriFunc.length; ++ii) {
               aoTriFunc[ii].innerHTML+="<span id='"+aoTriFunc[ii].id+"1' class='cbTriB1' style='color:"+msRed+";'>d</span>";
             }
@@ -719,9 +721,11 @@ var CalculatorButtonListener = {      // Define a class CalculatorButtonListener
                     
           if (msMode=="C") {
             oDorRB.innerHTML="Mode T"; oDorRB.style.color=msRed;
+            oDorRB.title="The calculator is currently in Mode T (Typing Mode). Click to change to Mode C (Calculator Mode). The differences between two modes are only in the order of pressing buttons. For example, in the Mode C, one should press number '5' button first and then press 'sin' button to input 'sin(5)'. But in the Mode T, one should press 'Sin' button, number '5' button and right parenthesis ')' button sequentially to input 'sin(5)'.";
             msMode="T";
           } else {
             oDorRB.innerHTML="Mode C"; oDorRB.style.color=msWhite;
+            oDorRB.title="The calculator is currently in Mode C (Calculator Mode). Click to change to Mode T (Typing Mode). The differences between two modes are only in the order of pressing buttons. For example, in the Mode C, one should press number '5' button first and then press 'sin' button to input 'sin(5)'. But in the Mode T, one should press 'Sin' button, number '5' button and right parenthesis ')' button sequentially to input 'sin(5)'.";
             msMode="C";
           }
           break;
@@ -731,9 +735,11 @@ var CalculatorButtonListener = {      // Define a class CalculatorButtonListener
           if (goCalculate.miPrintFormat==1) {
             goCalculate.miPrintFormat=2;
             oForS.innerHTML="Scientific"; oForS.style.color=msRed;
+            oForS.title="The calculator currently displays the result in the scientific format. Click to change to the fixed point format.";
           } else {
             goCalculate.miPrintFormat=1;
             oForS.innerHTML="Fixed Point"; oForS.style.color=msWhite;
+            oForS.title="The calculator currently displays the result in the fixed point format. Click to change to the scientific format."
           }
           goCalculate.resultPrint(document.getElementById(msResultContainerID),gdLastCalculateResult);
           moNew.msCalculationResult=document.getElementById(msResultContainerID).innerHTML;

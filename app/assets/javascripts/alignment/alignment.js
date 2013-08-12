@@ -25,13 +25,24 @@ function getTextAreaValue(selectId, selectDelimiter)
   var iCol;
 
   var aEmptyLine = new Array();
-
-  for(var i = 0; i < aLines.length; ++i){
-    aLines[i] = trimStr(aLines[i]);
-    aLines[i] = aLines[i].replace(/[\t*]/g," ");
-    aLines[i] = aLines[i].replace(/[\s*]/g," ");
+  
+  if (sDelimiter != " "){
+    alert('not')
+    for(var i = 0; i < aLines.length; ++i){
+      aLines[i] = trimStr(aLines[i]);
+      aLines[i] = aLines[i].replace(/[\t*]/g," ");
+      aLines[i] = aLines[i].replace(/[\s*]/g,"");
+    }
   }
-
+  else{
+    alert("\s")
+    for(var i = 0; i < aLines.length; ++i){
+      aLines[i] = trimStr(aLines[i]);
+      aLines[i] = aLines[i].replace(/[\t*]/g," ");
+      aLines[i] = aLines[i].replace(/[\s*]/g," ");
+    }
+  }
+  
   for(var i = 0; i < aLines.length; ++i){
     aEmptyLine[i] = true;
     for(var j = 0; j < aLines[i].length; ++j){
@@ -161,8 +172,15 @@ function getTextAreaValue(selectId, selectDelimiter)
 /* Append some extra spaces to each field, the num is the total space count that add to */
 function addExtraSpace(num, delimiter){
   var sSpace = delimiter;
-  for(var i = 0; i < num; ++i){
-    sSpace += " ";
+  if (sSpace == " "){
+    for(var i = 0; i < num-1; ++i){
+      sSpace += " ";
+    }
+  }
+  else {
+    for(var i = 0; i < num; ++i){
+      sSpace += " ";
+    }
   }
   return sSpace;
 }
