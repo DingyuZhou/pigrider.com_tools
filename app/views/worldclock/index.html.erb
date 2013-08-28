@@ -14,6 +14,11 @@
 <% end %>
 
 
+<div class="FloatRight">
+  <%= render 'pigrider_layout/main/indirectSharing' %>
+</div>
+
+
 <div class="MainContainer">
   <h1 class="WorldClockTitle">World Clock</h1>
   
@@ -34,5 +39,5 @@
   </table>
   
   
-  <h2 class="DSTWarning">Standard Time<span> &#160; = &#160; </span>Daylight Saving Time<span> &#160; - &#160; </span>1 hour</h2>
+  <h2 id="warningForDST"></h2>
 </div>

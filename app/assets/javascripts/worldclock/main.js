@@ -36,6 +36,11 @@ function getTime() {
   if (tLocalTime>=tStartEuroDST && tLocalTime<tEndEuroDST) {
     bEuroDST=true;
   }
+  
+  
+  if (bUsaDST || bEuroDST) {
+    document.getElementById("warningForDST").innerHTML="Standard Time<span> &#160; = &#160; </span>Daylight Saving Time<span> &#160; - &#160; </span>1 hour"
+  }
 
   
   document.getElementById("tLocalTime").innerHTML=printHour(iLocalHour)+sEnding+":"+makeUpZero(tLocalTime.getSeconds());
