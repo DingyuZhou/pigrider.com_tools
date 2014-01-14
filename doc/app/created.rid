@@ -1,0 +1,18 @@
+Sun, 12 Jan 2014 16:21:16 -0800
+doc/README_FOR_APP	Sun, 12 Jan 2014 16:19:54 -0800
+app/controllers/alignment_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/application_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/basicstatistics_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/calculator_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/date_calculator_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/delimiter_converter_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/main_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/controllers/worldclock_controller.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/alignment_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/application_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/basic_statistics_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/calculator_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/date_caculator_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/delimiter_converter_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/main_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800
+app/helpers/worldclock_helper.rb	Sat, 11 Jan 2014 18:11:26 -0800

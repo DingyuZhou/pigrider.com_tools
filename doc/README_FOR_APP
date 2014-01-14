@@ -1,2 +1,52 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+
+---
+== Introduction for tools.pigrider.com
+  
+  
+[Purpose]
+  This website is a collection for some useful tools.
+<b> </b>
+
+
+[Local Dependencies]
+  1. The engine: pigrider_layout
+<b> </b>
+
+
+[Deploy in RAILS_ENV=development]
+  1. Generate the database connection file "database.yml":
+      cd config/
+      cp database_template.yml database.yml
+  2. Fill in correct username and password for the development environment in the file "database.yml". Then if the database was not initially set, you may need to run:
+      bundle exec rake db:create
+      bundle exec rake db:migrate
+  3. <tt>bundle install</tt>
+  4. You may clear all old "tmp" or "log" files at this point with:
+      bundle exec rake tmp:clear
+      bundle exec rake log:clear
+  5. Done!
+<b> </b>
+
+
+[Deploy in RAILS_ENV=production]
+  Suggest to read this blog first: {Deploy Rails 3.2 project to production}[http://blogs.pigrider.com/blogs/2].
+
+  1. Generate the database connection file "database.yml":
+      cd config/
+      cp database_template.yml database.yml
+  2. Fill in correct username and password for the production environment in the file "database.yml". Then if the database was not initially set, you may need to run:
+      RAILS_ENV=production bundle exec rake db:create
+      RAILS_ENV=production bundle exec rake db:migrate
+  3. <tt>bundle install</tt>
+  4. You may clear all old production deploying files with:
+      RAILS_ENV=production bundle exec rake assets:clean
+  5. You may clear all old "tmp" or "log" files at this point with:
+      RAILS_ENV=production bundle exec rake tmp:clear
+      RAILS_ENV=production bundle exec rake log:clear
+  6. Deploy to the production:
+      RAILS_ENV=production bundle exec rake assets:precompile
+  7. Done!
+<b> </b>
